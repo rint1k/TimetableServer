@@ -25,6 +25,6 @@ public class Book {
 
     private Date date; // время и дата бронирования
 
-    private Audience audience;
+    private Audience audience; // аудитория
 
 }
