@@ -1,6 +1,6 @@
-package service;
+package ru.timetable.service;
 
-import model.Audience;
+import ru.timetable.model.Audience;
 
 public interface AudienceService {
 

@@ -1,11 +1,11 @@
-package model;
+package ru.timetable.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,10 +15,13 @@ import java.util.List;
 @Data
 @Builder
 public class Timetable {
+
+    @Id
+    @GeneratedValue
     private Long id;
 
     private Long ownerId; // владелец расписания (кфу, мгу и тд)
 
-    // one to many
-    private List<Book> book = new ArrayList<>(); // список бронирований
+    @OneToMany(mappedBy = "timetable", cascade = CascadeType.ALL)
+    private List<Book> books; // список бронирований
 }

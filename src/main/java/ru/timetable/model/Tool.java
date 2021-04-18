@@ -1,12 +1,12 @@
-package model;
+package ru.timetable.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @AllArgsConstructor
@@ -16,10 +16,15 @@ import javax.persistence.Id;
 public class Tool {
 
     @Id
+    @GeneratedValue
     private Long id;
 
     private String description; // информация о инвентаре (состояние, комментарий)
 
     private ToolType toolType; // что за инструмент (проектор/доска/маникен для бжд)
+
+    @ManyToOne
+    @JoinColumn(name = "audience_id")
+    private Audience audience;
 
 }

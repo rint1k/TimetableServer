@@ -1,4 +1,4 @@
-package model;
+package ru.timetable.model;
 
 public enum ToolType {
     PROJECTOR, // проектор

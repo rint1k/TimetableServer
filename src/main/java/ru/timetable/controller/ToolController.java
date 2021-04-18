@@ -1,4 +1,4 @@
-package controller;
+package ru.timetable.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
